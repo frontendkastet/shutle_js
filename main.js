@@ -1,11 +1,18 @@
-// Registration form
-let registrationForm = document.getElementById('registrationForm');
+// Registration form  
+
+
+let registrationForm = document.getElementById('registration-form');
 let email = document.getElementById('email');
 let password = document.getElementById('password');
 let confirmPassword = document.getElementById('confirm-password');
 registrationForm.addEventListener('submit', getSubmit);
 
 function getSubmit(e) {
+  if(password.value.length < "8"){
+    alert("Your password very short");
+    e.preventDefault();
+    return;
+  }
   if (email.value === "" ){
     alert('Please enter youre email!!!');
     e.preventDefault();
@@ -35,6 +42,10 @@ function getSubmit(e) {
   window.location.replace("../login/index.html");
   e.preventDefault();
 }
+
+
+
+
 
 
 
