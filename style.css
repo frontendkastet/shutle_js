@@ -4,7 +4,12 @@
 }
 
 .brd {
-  border: 4px double black; /* Параметры границы */
-  background::rgba(82, 82, 179, 0.97); /* Цвет фона */
-  padding: 10px; /* Поля вокруг текста */
+  border: 4px double black; 
+  background::rgba(82, 82, 179, 0.97);
+  padding: 10px;
+}
+
+.table-color {
+  background-color:rgb(0,0,0);
+  color:#008000;
 }

@@ -1,24 +1,51 @@
-// const fields = ['name', 'company', 'email', 'phone', 'balance', 'registered']; 
+const fields = ['name', 'company', 'email', 'phone', 'balance', 'registered']; 
 // TODO: расширить tableConfig
 const tableConfig = [
   {
-    header: 'Имя',
-    key: 'name',
-    balance: "balance"
-  }
+    header: 'Name', 
+    key: 'name'
+  },
+  {
+  header: 'Company', 
+  key: 'company'
+  },
+  {
+    header: 'Email', 
+    key: 'email'
+  },
+  {
+    header: 'Phone Number', 
+    key: 'phone'
+  },
+  {
+    header: 'Balance', 
+    key: 'balance'
+  },
+  {
+    header: 'Registration date', 
+    key: 'registered'
+  },
+  
 ];
+
+
 
 const getTHead = () => {
   const tHead = document.createElement('thead');
+  tHead.style.color = "";
+  tHead.style.background = "rgb(13, 23, 004)";
   tableConfig.forEach((cell) => {
     const cellHead = document.createElement('th');
     cellHead.innerHTML = cell.header;
+    cellHead.style.border = '1px solid '
     tHead.appendChild(cellHead);
   })
   return tHead;
 }
 const createTable = (data) => {
   const table = document.createElement('table');
+  table.style.border = '1px solid grey';
+  table.style.margin = '0 auto';
   const tHead = getTHead();
   table.appendChild(tHead);
   const tBody = document.createElement('tbody');
@@ -29,6 +56,8 @@ const createTable = (data) => {
       tableConfig.forEach((cell) => {
         const td = document.createElement('td');
         td.innerHTML = item[cell.key];
+        td.style.padding = "0 50px 0 0"
+        td.style.border = "1px solid";
         tr.appendChild(td);
       });
 
